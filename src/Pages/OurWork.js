@@ -8,6 +8,8 @@ import {Link} from 'react-router-dom';
 import {motion} from 'framer-motion';
 import {pageAnimation, fade, photoAnim, lineAnim, slider} from '../animation';
 
+import ScrollTop from '../Components/ScrollTop';
+
 const OurWork = () => {
     return(
         <Work style={{background: "#fff"}} variants={pageAnimation} initial="hidden" animate="show" exit="exit">
@@ -39,6 +41,7 @@ const OurWork = () => {
                 <img src={goodtimes} alt="goodtimes"/>
                 </Link>
             </Movie>
+            <ScrollTop />
         </Work>
     );
 }
@@ -49,6 +52,9 @@ const Work = styled(motion.div)`
     padding: 5rem 10rem;
     h2 {
         padding: 1rem 0rem;
+    }
+    @media(max-width: 1150px) {
+        padding: 2rem 2rem;
     }
 `;
 

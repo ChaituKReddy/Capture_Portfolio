@@ -12,7 +12,15 @@ const GlobalStyle = createGlobalStyle `
 body{
     background: #1b1b1b;
     font-family: "Inter", sans-serif;
+    overflow-x: hidden;
 }
+
+html {
+    @media(max-width: 1500px) {
+        font-size: 80%;
+    }
+}
+
 
 button {
     font-weight: bold;

@@ -1,42 +1,58 @@
 import styled from 'styled-components';
 import {About} from '../style';
+import Toggle from './Toggle';
+import {AnimateSharedLayout} from 'framer-motion';
+import useScroll from './UseScroll';
+import {scrollReveal} from '../animation';
+
 
 const FAQSection = () => {
+    const [element, controls] = useScroll();
     return(
-        <Faq>
+        <Faq variants={scrollReveal} initial="hidden" animate={controls} ref={element} >
             <h3>Any Questions? <span>FAQ</span> </h3>
-            <div className="question">
-                <h4>How do I start? </h4>
-                <div className="answer">
-                    <p>Lorem ipsum dolor sit amet.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, quae?</p>
+            <AnimateSharedLayout>
+                <div className="question">
+                    <Toggle title = "How do I start?">
+                        {/* <h4>How do I start? </h4> */}
+                        <div className="answer">
+                            <p>Lorem ipsum dolor sit amet.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, quae?</p>
+                        </div>
+                        {/* <div className="faq-line"></div> */}
+                    </Toggle>
                 </div>
-                <div className="faq-line"></div>
-            </div>
-            <div className="question">
-                <h4> Daily Schedule. </h4>
-                <div className="answer">
-                    <p>Lorem ipsum dolor sit amet.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, quae?</p>
+                <div className="question">
+                    <Toggle title = "Daily Schedule.">
+                        {/* <h4> Daily Schedule. </h4> */}
+                        <div className="answer">
+                            <p>Lorem ipsum dolor sit amet.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, quae?</p>
+                        </div>
+                        {/* <div className="faq-line"></div> */}
+                    </Toggle>
                 </div>
-                <div className="faq-line"></div>
-            </div>
-            <div className="question">
-                <h4>Different Payment methods. </h4>
-                <div className="answer">
-                    <p>Lorem ipsum dolor sit amet.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, quae?</p>
+                <div className="question">
+                    <Toggle title = "Different Payment methods. ">
+                        {/* <h4>Different Payment methods. </h4> */}
+                        <div className="answer">
+                            <p>Lorem ipsum dolor sit amet.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, quae?</p>
+                        </div>
+                        {/* <div className="faq-line"></div> */}
+                    </Toggle>
                 </div>
-                <div className="faq-line"></div>
-            </div>
-            <div className="question">
-                <h4>What products do you offer? </h4>
-                <div className="answer">
-                    <p>Lorem ipsum dolor sit amet.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, quae?</p>
+                <div className="question">
+                    <Toggle title="What products do you offer? ">
+                        {/* <h4>What products do you offer? </h4> */}
+                        <div className="answer">
+                            <p>Lorem ipsum dolor sit amet.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, quae?</p>
+                        </div>
+                        {/* <div className="faq-line"></div> */}
+                    </Toggle>
                 </div>
-                <div className="faq-line"></div>
-            </div>
+            </AnimateSharedLayout>
         </Faq>
     );
 }
@@ -53,7 +69,7 @@ const Faq = styled(About)`
     }
 
     .faq-line {
-        background: #cccccc;
+        background: #23d997;
         height: 0.2rem;
         margin: 2rem 0rem;
         width: 100%;

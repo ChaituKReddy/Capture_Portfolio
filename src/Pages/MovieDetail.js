@@ -6,6 +6,8 @@ import {useState, useEffect} from 'react';
 import {motion} from 'framer-motion';
 import {pageAnimation} from '../animation';
 
+import ScrollTop from '../Components/ScrollTop';
+
 const MovieDetail = () => {
     const history = useHistory();
     const url = history.location.pathname;
@@ -35,6 +37,7 @@ const MovieDetail = () => {
             <ImageDisplay>
                 <img src={movie.secondaryImg} alt="secondaryImage"/>
             </ImageDisplay>
+            <ScrollTop />
         </Details>
         )}
         </>
@@ -70,6 +73,10 @@ const Awards = styled.div`
     margin: 5rem 10rem;
     align-items: center;
     justify-content: space-around;
+    @media(max-width: 1150px) {
+        display: block;
+        margin: 2rem 2rem;
+    }
 `
 //Award component
 const Award = ({title, description}) => {

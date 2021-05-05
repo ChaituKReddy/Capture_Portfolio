@@ -8,9 +8,13 @@ import styled from 'styled-components';
 
 import {About, Description, Image} from '../style';
 
+import useScroll from './UseScroll';
+import {scrollReveal} from '../animation';
+
 const ServicesSection = () => {
+    const [element, controls] = useScroll();
     return(
-        <Services>
+        <Services variants={scrollReveal} initial="hidden" animate={controls} ref={element} >
             <Description>
                 <h2>High <span>quality</span> service.</h2>
                 <Cards>
@@ -66,7 +70,9 @@ const Services = styled(About)`
 const Cards = styled.div`
     display: flex;
     flex-wrap: wrap;
-
+    @media(max-width: 1150px) {
+        justify-content: center;
+    }
 `
 
 const Card = styled.div`

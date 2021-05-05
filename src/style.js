@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import {motion} from 'framer-motion';
 
-export const About = styled.div`
+export const About = styled(motion.div)`
     min-height: 90vh;
     display: flex;
     align-items: center;
@@ -10,6 +11,11 @@ export const About = styled.div`
     /* h3 {
         font-size: 3rem;
     } */
+    @media(max-width: 1150px) {
+        display: block;
+        padding: 2rem 2rem;
+        text-align: center;
+    }
 `;
 
 export const Description = styled.div `
@@ -18,6 +24,13 @@ export const Description = styled.div `
     z-index: 2;
     h2 {
         font-weight: lighter;
+    }
+
+    @media(max-width: 1150px) {
+        padding: 0rem;
+        button {
+            margin: 2rem 0rem 5rem 0rem;
+        }
     }
 `;
 
